@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4b6635d8-74f0-4b51-b570-7278286874b5/resourceGroups/my-tailwind/providers/Microsoft.Web/sites/sampleangularapp2",
+    "appService.deploySubpath": "dist\\my-tailwind"
+}
