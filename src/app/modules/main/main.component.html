@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')" autosize>
+
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+    <p>Auto-resizing sidenav</p>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
