@@ -17,6 +17,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        'primary': '#fcbb4a',
         'sucess': '#46a031',
       }
     },

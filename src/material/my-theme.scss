@@ -1,0 +1,52 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+
+$mat-primary-dark: (
+  50: #fef4e0,
+  100: #fde2b2,
+  200: #fdcf7f,
+  300: #fcbb4a,
+  400: #fcab1e,
+  500: #fc9d00,
+  600: #f89100,
+  700: #f38100,
+  800: #ed7100,
+  900: #e55700,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: mat.define-palette($mat-primary-dark, 300),
+    accent: mat.define-palette(mat.$blue-grey-palette),
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette($mat-primary-dark, 300),
+    accent: mat.define-palette(mat.$blue-grey-palette),
+  ),
+));
+
+mat.$theme-ignore-duplication-warnings: true;
+
+@include mat.all-component-themes($dark-theme);
+@media (prefers-color-scheme: light) {
+  @include mat.all-component-themes($light-theme);
+}
