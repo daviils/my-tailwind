@@ -28,10 +28,35 @@ $mat-primary-dark: (
   )
 );
 
+$mat-accent-dark: (
+  50: #e5f3ff,
+  100: #c1e0ff,
+  200: #99cdff,
+  300: #72b9ff,
+  400: #59a9ff,
+  500: #4a9aff,
+  600: #4a8bfc,
+  700: #4778e7,
+  800: #4566d5,
+  900: #3f46b4,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
 $dark-theme: mat.define-dark-theme((
   color: (
     primary: mat.define-palette($mat-primary-dark, 300),
-    accent: mat.define-palette(mat.$blue-grey-palette),
+    accent: mat.define-palette($mat-accent-dark, 600),
   ),
   typography: mat.define-typography-config(),
   density: 0,
@@ -40,11 +65,13 @@ $dark-theme: mat.define-dark-theme((
 $light-theme: mat.define-light-theme((
   color: (
     primary: mat.define-palette($mat-primary-dark, 300),
-    accent: mat.define-palette(mat.$blue-grey-palette),
+    accent: mat.define-palette($mat-accent-dark, 600),
   ),
 ));
 
-mat.$theme-ignore-duplication-warnings: true;
+mat.$theme-ignore-duplication-warnings: true
+
+;
 
 @include mat.all-component-themes($dark-theme);
 @media (prefers-color-scheme: light) {
